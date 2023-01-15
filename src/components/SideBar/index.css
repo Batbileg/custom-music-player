@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    
+    .sidebar {
+        @apply
+        shadow-2xl 
+        h-screen 
+        flex-none
+         bg-primary w-52
+        pl-5
+        pr-5
+        /* mr-2 */
+    }
+    
+    .sidebar-playericon {
+        @apply
+        text-xl
+        /* justify-center */
+        text-white 
+        flex
+        pt-6
+        pb-8 
+    }
+
+    .sidebar-element {
+        @apply 
+        relative
+        mx-auto
+        w-full
+        flex
+        p-2
+        text-gray-300
+        hover:text-gray-50
+        transition-all
+        duration-300
+        ease-linear
+        hover:bg-green-600;
+    }
+
+    .sidebar-text {
+        @apply 
+        pl-3
+    }
+
+    .suggestions {
+        @apply
+        text-gray-500
+        text-sm
+        pt-16
+    }
+    .suggested-item{
+        @apply
+        p-2
+        pb-0
+    }
+
+}
