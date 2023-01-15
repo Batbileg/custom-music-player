@@ -20,11 +20,11 @@ const NavBar = () => {
     )
 }
 
-interface NavBarIconProps {
+interface INavBarIconProps {
     icon: JSX.Element
 }
 
-const NavBarIcon = ({icon}:NavBarIconProps) => {
+const NavBarIcon = ({icon}:INavBarIconProps) => {
     return (
         <button className="w-12 h-12 flex justify-center items-center text-gray-600 hover:text-gray-50 transition-all">
         {icon}
@@ -32,21 +32,21 @@ const NavBarIcon = ({icon}:NavBarIconProps) => {
     )
 }
 
-interface NavBarItemProps {
+interface INavBarItemProps {
     children: string
 }
 
-const NavBarItem = ({children}:NavBarItemProps) => {
+const NavBarItem = ({children}:INavBarItemProps) => {
     return(
             <button className="navbar-item">{children}</button>
     )
 }
 
-interface NavBarProfileProps{
+interface INavBarProfileProps{
     username: string
 }
 
-const NavBarProfile = ({username}:NavBarProfileProps) => {
+const NavBarProfile = ({username}:INavBarProfileProps) => {
     return (
         // <div>
         <button className="navbar-profile">

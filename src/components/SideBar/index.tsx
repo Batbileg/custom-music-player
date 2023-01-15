@@ -3,11 +3,11 @@ import {BiLibrary} from "react-icons/bi"
 // import { IconBase } from "react-icons
 import "./index.css"
 
-interface SideBarProps {
+interface ISideBarProps {
     items?: string[]
 }
 
-const SideBar = ({items}: SideBarProps):JSX.Element => {
+const SideBar = ({items}: ISideBarProps):JSX.Element => {
     const list_items:JSX.Element[] = []
     // console.log(items)
     items?.forEach((item)=>{
@@ -42,12 +42,12 @@ const SideBar = ({items}: SideBarProps):JSX.Element => {
     )
 }
 
-interface SideBarElementProps{
+interface ISideBarElementProps{
     icon: JSX.Element,
     text: string
 }
 
-const SideBarElement = ({icon, text}:SideBarElementProps) => {
+const SideBarElement = ({icon, text}:ISideBarElementProps) => {
     return(
         <div className="sidebar-element">
             <div className="sidebar-icon">{icon}</div>
