@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar"
 import MainContainer from './components/MainContainer';
 
 const items = ["Fleedwood Mac","Discover Weekly","Slow Jams","Liked from radio","Billboard Hot 100", "Rock Hits"]
+//changes
 
 function App() {
   return (
