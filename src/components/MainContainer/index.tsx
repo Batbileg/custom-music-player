@@ -12,34 +12,71 @@ const GridController = () => {
 
 const MainContainer = () => {
 
+    // const [state, setState] = useState({activeItem:null, filled:false})
     const [state, setState] = useState({activeItem:null})
+    const [filled, setFilled] = useState(false)
 
+    // const [filled, setFilled] = useState(false)
+    // let filled = false
     // const state = {
     //     activeItem: null
     // }
 
+    const rowItems = 6
+
     const handleClick = (id:any) => {
-        console.log("clicked", id.i)
+        // console.log("clicked", id.i)
         console.log("clicked", id)
+        // const isFilled = checkFilled(id)
+        // setState({activeItem: id, filled: isFilled
         setState({activeItem: id
         })
+
+    }
+
+    const checkFilled = (i:number) => {
+        let isFilled = i < rowItems
+        // if (i%6 === 5 || i>=rowItems) {
+        if (i%6 === 5) {
+            // setFilled(true)
+            isFilled = true
+        }
+        else{
+            isFilled = false
+            // setFilled(false)
+        }
+        // console.log("filled= ", isFilled)
+        // console.log("===========")
+        return isFilled
+    }
+
+    const fill = (i:number) => {
+        const filled = checkFilled(i)
+        if(filled)
+        setFilled(filled)
     }
 
     const items = []
 
     for(let i=0; i<=15; i++) {
         items.push(
-            <GridItem 
-                key={i} 
-                itemId={i} 
-                onClick={()=>handleClick(i)} 
-                imageUrl={require("../../static/albums/Cream - Disraeli Gears/cover.png")} 
-                artist="Cream"
-                album="Disreali Gears" 
-                isActive={state.activeItem === i}/>
-                )
+                <GridItem 
+                    key={i} 
+                    itemId={i} 
+                    onClick={()=>handleClick(i)} 
+                    imageUrl={require("../../static/albums/Cream - Disraeli Gears/cover.png")} 
+                    artist="Cream"
+                    album="Disreali Gears" 
+                    isActive={state.activeItem === i}/>
+            )      
+            if(state.activeItem && i >= state.activeItem)
+                fill(i)
+            // i >= state.activeItem ? fill(i) : null;
+            // console.log(filled)
+            if(state.activeItem === i && filled)
+            // if(state.activeItem === i)
+                items.push(<div className="col-span-full h-52 w-auto bg-slate-300">1231321</div>)
         }
-        
         return (<div className="main-container">
             {items}
         {/* <GridItem key="1" itemId="1" onClick={()=>handleClick("1")} imageUrl={require("../../static/albums/Cream - Disraeli Gears/cover.png")} artist="Cream" album="Disreali Gears" isActive={state.activeItem === "1"}/> */}
@@ -66,17 +103,12 @@ const GridItem = ({itemId, imageUrl, artist, album, onClick, isActive}:IGridItem
                 <img src={imageUrl} className="album-art"></img>
                 <div className="text-slate-200">{artist}</div>
                 <div className="text-slate-400">{album}</div>
-               {isActive ? (
+               {/* {isActive ? (
                 <div className="song-names">
-                <div className="text-slate-100">asd</div>
-                <div className="text-slate-100">asd</div>
-                <div className="text-slate-100">asd</div>
-                <div className="text-slate-100">asd</div>
-                <div className="text-slate-100">asd</div>
-                <div className="text-slate-100 pb-10 mb-10">asd</div>
+                    <div>{itemId}</div>
                 </div>
                ):
-                null}
+                null} */}
         </div>)
 }
 

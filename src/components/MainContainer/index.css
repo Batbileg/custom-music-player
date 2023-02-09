@@ -10,6 +10,7 @@
         px-10
         xl:grid-cols-6
         md:grid-cols-4
+        relative
         /* gap-4 */
     }
 
@@ -22,16 +23,42 @@
         px-2
         pt-2
         text-lg
-        /* transition-all */
+        transition-all
         /* duration-300 */
     }
     
     .grid-item-active {
         @apply
-        h-96
+        /* h-96 */
         bg-green-600
+        /* pb-96 */
+        /* col-start-1 */
+        /* row-start-1 */
+        /* col-span-6 */
+        /* w-96 */
+        /* w-full */
+        /* row-start-1 */
+        /* row-span-1 */
+        /* col-span-6 */
     }
     
+    .song-names {
+        @apply
+        bg-green-600
+        text-slate-100
+        /* absolute  */
+        left-0
+        text-base
+        pl-2
+        pr-5
+        pt-5
+        ml-10
+        w-full
+        /* overflow-hidden */
+        /* h-52 */
+        /* mb-10 */
+    }
+
     /* .album-art {
         @apply
         p-3
